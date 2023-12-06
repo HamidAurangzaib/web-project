@@ -1,0 +1,25 @@
+/* darkmode.css */
+
+/* Apply dark mode to the entire "Privacy" component */
+#privacy-component.dark-mode {
+    background-color: #333; /* Background color for dark mode */
+    color: #fff; /* Text color in dark mode */
+  }
+  
+  /* Style the button for dark mode */
+  #privacy-component.dark-mode button {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* You can specify additional styles for other elements in dark mode as needed */
+  #privacy-component.dark-mode h2 {
+    color: #fff; /* Header text color in dark mode */
+  }
+  
+  #privacy-component.dark-mode span {
+    color: #ccc; /* Text color for additional text content in dark mode */
+  }
+  
+  /* Add styles for other elements within the "Privacy" component as required */
+  

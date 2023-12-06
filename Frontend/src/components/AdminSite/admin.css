@@ -1,0 +1,33 @@
+/* Admin.css */
+
+.admin-dashboard {
+    display: flex;
+    height: 100vh; /* Set the height to 100% of the viewport height */
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #C81262;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+  }
+  
+  .sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #C81262;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sidebar button:hover {
+    background-color: #bb668b;
+  }
+  
+  /* Add additional styling as needed */
+  

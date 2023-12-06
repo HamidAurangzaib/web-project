@@ -1,0 +1,33 @@
+.nav-link{
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: #ffffff;
+    
+  }
+  .Heading{
+    font-size: 56px;
+    color: #C81262;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 80px;
+    margin-bottom: 30px;
+
+  }
+  .Para{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:gray;
+    font-size: 20px;
+}
+.carosel {
+    border-radius: 55px 55px 55px 55px;
+    overflow: hidden;
+    
+}
+.Heading2{
+    font-size: 36px;
+    color: #C81262;
+    font-family: 'Poppins', sans-serif;
+    
+
+  }
+  .nav-item>a{
+    color:white;
+  }

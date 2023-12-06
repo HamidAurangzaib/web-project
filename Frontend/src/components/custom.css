@@ -1,0 +1,19 @@
+/* custom.css */
+.learn-more-button {
+    background-color: white;
+    color:#0597ff;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .learn-more-button:hover {
+    background-color: #a40f5e;
+  }
+  .col-md-6 mb-4 mb-md-0 align-self-center>h1{
+   margin-top: 5;
+  }
+  
