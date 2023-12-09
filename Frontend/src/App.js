@@ -23,7 +23,7 @@ import Disclaimer from "./components/Disclaimer";
          <Route path="/" element={<Home />} />
          <Route path="/about" element={<About />} />
          <Route path="/signup" element={<Signup />} />
-         <Route path="/Rishtas" element={<Rishtaas />} />
+         <Route path="/rishtaas" element={<Rishtaas />} />
          <Route path="/disclaimer" element={<Disclaimer />} />
          <Route path="/signin" element={<Signin />} />
          <Route path="/privacy" element={<Privacy />} />

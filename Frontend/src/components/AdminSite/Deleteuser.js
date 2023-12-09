@@ -64,12 +64,17 @@ const Deleteuser = ({ users }) => {
     <table style={tableStyle}>
       <thead>
         <tr>
-          <th style={thStyle}>First Name</th>
+        <th style={thStyle}>First Name</th>
           <th style={thStyle}>Last Name</th>
           <th style={thStyle}>Email</th>
           <th style={thStyle}>Password</th>
           <th style={thStyle}>Age</th>
           <th style={thStyle}>Religion</th>
+          <th style={thStyle}>Phone Number</th>
+          <th style={thStyle}>Looking for</th>
+          <th style={thStyle}>Cast</th>
+          <th style={thStyle}>Country</th>
+          <th style={thStyle}>City</th>
           <th style={thStyle}>Actions</th>
         </tr>
       </thead>
@@ -82,6 +87,11 @@ const Deleteuser = ({ users }) => {
             <td style={tdStyle}>{item.password}</td>
             <td style={tdStyle}>{item.age}</td>
             <td style={tdStyle}>{item.religion}</td>
+            <td style={tdStyle}>{item.phone}</td>
+            <td style={tdStyle}>{item.gender}</td>
+            <td style={tdStyle}>{item.cast}</td>
+            <td style={tdStyle}>{item.country}</td>
+            <td style={tdStyle}>{item.city}</td>
             <td style={tdStyle}>
               <button
                 className="btn btn-danger"

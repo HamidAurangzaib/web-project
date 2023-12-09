@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import {
   MDBBtn,
@@ -26,7 +27,9 @@ function Signup() {
     cast: "",
     phone: "",
     country: "",
-    city: ""
+    city: "",
+    image:""
+    
   });
 
   const handlechange = (e) => {
@@ -48,6 +51,7 @@ function Signup() {
     await addUsers(addusers);
   };
 
+  
   return (
     <div>
       <Navbar />
@@ -65,6 +69,7 @@ function Signup() {
               </MDBCol>
             </MDBRow>
             <MDBInput wrapperClass='mb-4' label='Email' id='form1' name='email' type='email' onChange={(e) => handlechange(e)} />
+            <MDBInput wrapperClass='mb-4' label='Image' id='form1' name='image' type='text' onChange={(e) => handlechange(e)} />
             <MDBInput wrapperClass='mb-4' label='Password' id='form1' name='password' type='password' onChange={(e) => handlechange(e)} />
             <MDBInput wrapperClass='mb-4' label='Age' id='form1' name='age' type='number' onChange={(e) => handlechange(e)} />
             <label for="genderCombo" class="form-label">I'm Looking for:</label>
@@ -120,6 +125,7 @@ function Signup() {
               <option value="peshawar">peshawar</option>
               <option value="quetta">quetta</option>
             </select>
+            
             <div className='d-flex justify-content-center mb-4'>
               <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
             </div>

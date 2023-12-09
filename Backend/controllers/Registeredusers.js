@@ -35,6 +35,8 @@ export const addUsers= async(req,res)=>{
     const cityins= city.toString();
     const country = req.body.country; // No need to convert it explicitly
     const countryins= country.toString();
+    const image = req.body.image;
+    const imageins= image.toString();
     const newregistereduser= new Registeredusersmodel({
         fname: fnameins,
         lname: lnameins,
@@ -47,6 +49,7 @@ export const addUsers= async(req,res)=>{
         phone:phoneins,
         country:countryins,
         city:cityins,
+        image:imageins
       
 
 

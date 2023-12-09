@@ -79,10 +79,11 @@ const Userslist = ({ users }) => {
             <td style={tdStyle}>{item.password}</td>
             <td style={tdStyle}>{item.age}</td>
             <td style={tdStyle}>{item.religion}</td>
-            <td style={tdStyle}>{item.cast}</td>
-            <td style={tdStyle}>{item.city}</td>
             <td style={tdStyle}>{item.phone}</td>
             <td style={tdStyle}>{item.gender}</td>
+            <td style={tdStyle}>{item.cast}</td>
+            <td style={tdStyle}>{item.country}</td>
+            <td style={tdStyle}>{item.city}</td>
             <td style={tdStyle}></td>
           </tr>
         ))}

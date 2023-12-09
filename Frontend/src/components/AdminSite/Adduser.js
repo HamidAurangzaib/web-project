@@ -10,8 +10,7 @@ import {
   MDBCheckbox,
   MDBIcon,
 } from "mdb-react-ui-kit";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+
 import { addUsers } from "../../Service/api";
 
 function Adduser() {
@@ -21,16 +20,33 @@ function Adduser() {
     email: "",
     password: "",
     age: "",
+    gender: "",
     religion: "",
+    cast: "",
+    phone: "",
+    country: "",
+    city: "",
   });
 
   const handlechange = (e) => {
-    setAddusers({ ...addusers, [e.target.name]: [e.target.value] });
+    const { name, value } = e.target;
+
+    // For dropdowns, handle them separately
+    if (name === "gender" || name === "religion" || name === "cast" || name === "country" || name === "city") {
+      // For dropdowns, get the selected value using e.target.value
+      setAddusers((prevData) => ({ ...prevData, [name]: value }));
+    } else {
+      // For other input fields, use the normal approach
+      setAddusers((prevData) => ({ ...prevData, [name]: value }));
+    }
   };
+
   const adddetails = async (e) => {
     e.preventDefault();
+    console.log("Data", addusers);
     await addUsers(addusers);
   };
+
   return (
     <div>
       <MDBContainer fluid>
@@ -94,9 +110,14 @@ function Adduser() {
               onChange={(e) => handlechange(e)}
             />
             <label for="genderCombo" class="form-label">
-              I'm Looking for:
+              Gender:
             </label>
-            <select class="form-select" id="genderCombo">
+            <select
+              class="form-select"
+              id="genderCombo"
+              name="gender"
+              onChange={(e) => handlechange(e)}
+            >
               <option value="" disabled selected>
                 Select
               </option>
@@ -106,7 +127,12 @@ function Adduser() {
             <label for="religionCombo" class="form-label">
               Religion:
             </label>
-            <select class="form-select" id="religionCombo" name="religion">
+            <select
+              class="form-select"
+              id="religionCombo"
+              name="religion"
+              onChange={(e) => handlechange(e)}
+            >
               <option value="" disabled selected>
                 Select Religion
               </option>
@@ -120,7 +146,12 @@ function Adduser() {
             <label for="castCombo" class="form-label">
               Cast:
             </label>
-            <select class="form-select" id="castCombo">
+            <select
+              class="form-select"
+              id="castCombo"
+              name="cast"
+              onChange={(e) => handlechange(e)}
+            >
               <option value="" disabled selected>
                 Select Cast
               </option>
@@ -150,7 +181,12 @@ function Adduser() {
               Currently Living:
             </label>
 
-            <select class="form-select" id="livingCountryCombo">
+            <select
+              class="form-select"
+              id="livingCountryCombo"
+              name="country"
+              onChange={(e) => handlechange(e)}
+            >
               <option value="" disabled selected>
                 Select Country
               </option>
@@ -159,12 +195,17 @@ function Adduser() {
               <option value="canada">Canada</option>
               <option value="india">India</option>
               <option value="united-states">United States</option>
-              <option value="united-states">Pakistan</option>
+              <option value="pakistan">Pakistan</option>
             </select>
             <label for="cityCombo" class="form-label">
               City:
             </label>
-            <select class="form-select" id="cityCombo">
+            <select
+              class="form-select"
+              id="cityCombo"
+              name="city"
+              onChange={(e) => handlechange(e)}
+            >
               <option value="" disabled selected>
                 Select City
               </option>

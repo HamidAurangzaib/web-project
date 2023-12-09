@@ -13,10 +13,7 @@ cast: String,
 phone: Number,
 city:  String,
 country: String ,
-
-
-
-
+image: String
 
 
 });

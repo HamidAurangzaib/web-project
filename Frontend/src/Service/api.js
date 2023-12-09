@@ -12,7 +12,10 @@ export const getUsers = async () =>{
    console.log("get api at frontend");
    return await axios.get(`${url}/admin`);
 }
-// Assuming you have something like this in your Service/api module
+export const getUsernew = async () =>{
+  console.log("get api at reached to get rishtass from db");
+  return await axios.get(`${url}/rishtaas`);}
+
 export const updateUser = async (userId, updatedUserData) => {
    try {
      const response = await axios.put(`${url}/admin/${userId}`, updatedUserData);
