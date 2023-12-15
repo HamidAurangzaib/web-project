@@ -20,6 +20,9 @@ function Navbar (){
         <Link to="/admin" className="nav-link">Admin</Link> 
         </li>
         <li class="nav-item">
+        <Link to="/adminnew" className="nav-link">Admin New</Link> 
+        </li>
+        <li class="nav-item">
         <Link to="/rishtaas" className="nav-link">Rishtas</Link> 
         </li>
         <li class="nav-item">

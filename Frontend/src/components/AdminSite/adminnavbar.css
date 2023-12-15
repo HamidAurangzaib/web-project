@@ -1,0 +1,13 @@
+/* adminnavbar.css */
+
+/* Change the color of the text in the nav-link */
+.navbar-nav .nav-item .nav-link1 {
+    color: #4a3637;
+    text-decoration: none;
+  }
+  
+  /* Change the color of the Font Awesome icons */
+  .navbar-nav .nav-item .nav-link1 svg {
+    color: #4a3637;
+  }
+  

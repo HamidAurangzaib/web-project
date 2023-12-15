@@ -11,26 +11,41 @@ const Userslist = ({ users }) => {
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
   };
 
-  const thStyle = {
+  const thCommonStyle = {
     border: "1px solid #dddddd",
     textAlign: "left",
-    padding: "12px",
-    background: "#f2f2f2",
+    padding: "16px",  // Increased padding for th
+  };
+
+  const thHeaderStyle = {
+    ...thCommonStyle,
+    background: "#ffffff",  // White background for the header row
     fontWeight: "bold",
+    color: "#4a3637",  // Set text color to brown
+  };
+
+  const thColumnStyle = {
+    ...thCommonStyle,
+    background: "#ffffff",  // White background for the columns
+    border: "none",  // Remove borders for columns
+    fontSize: "14px",  // Adjust text size
+    fontWeight: "normal",  // Remove bold property
+    fontFamily: "Arial, sans-serif",  // Set font family
   };
 
   const tdStyle = {
-    border: "1px solid #dddddd",
+    border: "none",  // Remove borders for table cells
     textAlign: "left",
-    padding: "12px",
-  };
-
-  const trStyle = {
+    padding: "16px",  // Increased padding for td
     transition: "background-color 0.3s",
+    fontSize: "14px",  // Adjust text size
+    fontFamily: "Arial, sans-serif",  // Set font family
+    color: "#8B4513",  // Set text color to brown
+    
   };
 
   const trHoverStyle = {
-    backgroundColor: "#e6f7ff",
+    background: "#ffffff",
   };
 
   const [usersData, setUsersData] = useState([]);
@@ -50,33 +65,31 @@ const Userslist = ({ users }) => {
   }, []);
 
   return (
-    <table style={tableStyle}>
+    <table className="mt-3" style={tableStyle}>
       <thead>
         <tr>
-          <th style={thStyle}>First Name</th>
-          <th style={thStyle}>Last Name</th>
-          <th style={thStyle}>Email</th>
-          <th style={thStyle}>Password</th>
-          <th style={thStyle}>Age</th>
-          <th style={thStyle}>Religion</th>
-          <th style={thStyle}>Phone Number</th>
-          <th style={thStyle}>Looking for</th>
-          <th style={thStyle}>Cast</th>
-          <th style={thStyle}>Country</th>
-          <th style={thStyle}>City</th>
-
-
-
+          <th style={thHeaderStyle} colSpan="11">Registered Users</th>
+        </tr>
+        <tr>
+          <th style={thColumnStyle}>First Name</th>
+          <th style={thColumnStyle}>Last Name</th>
+          <th style={thColumnStyle}>Email</th>
           
+          <th style={thColumnStyle}>Age</th>
+          <th style={thColumnStyle}>Religion</th>
+          <th style={thColumnStyle}>Phone Number</th>
+          <th style={thColumnStyle}>Looking for</th>
+          <th style={thColumnStyle}>Cast</th>
+          <th style={thColumnStyle}>Country</th>
+          <th style={thColumnStyle}>City</th>
         </tr>
       </thead>
       <tbody>
         {usersData.map((item) => (
-          <tr key={item.email} style={{ ...trStyle, ...trHoverStyle }}>
+          <tr key={item.email} style={trHoverStyle}>
             <td style={tdStyle}>{item.fname}</td>
             <td style={tdStyle}>{item.lname}</td>
             <td style={tdStyle}>{item.email}</td>
-            <td style={tdStyle}>{item.password}</td>
             <td style={tdStyle}>{item.age}</td>
             <td style={tdStyle}>{item.religion}</td>
             <td style={tdStyle}>{item.phone}</td>
@@ -84,7 +97,6 @@ const Userslist = ({ users }) => {
             <td style={tdStyle}>{item.cast}</td>
             <td style={tdStyle}>{item.country}</td>
             <td style={tdStyle}>{item.city}</td>
-            <td style={tdStyle}></td>
           </tr>
         ))}
       </tbody>

@@ -14,6 +14,7 @@ import Disclaimer from "./components/Disclaimer";
  import Cookies from "./components/Cookies";
  import Tos from "./components/Tos";
  import Rishtaas from "./components/Rishtaas";
+import AdminSidebar from "./components/AdminSite/AdminSidebar";
 
  function App() {
    return (
@@ -31,6 +32,7 @@ import Disclaimer from "./components/Disclaimer";
          <Route path="/contact" element={<Contact />} />
          <Route path="/TOS" element={<Tos />} />
          <Route path="/admin" element={<Admin/>} />
+         <Route path="/adminnew" element={<AdminSidebar/>} />
        </Routes>
        
        </Popstate>
