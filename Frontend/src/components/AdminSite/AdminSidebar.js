@@ -31,7 +31,7 @@ const AdminSidebar = () => {
        
         <div className="row">
         
-          <div className="col-md-12 col-lg-6 sidebar ">
+          <div className="col-md-12 col-lg-6 sidebar " style={{width:"300px"}}>
             <div className="sidebar-header">
               <img className='img-fluid rounded-circle' src={image} style={{ width: "100px", height: "100px" }} alt="Description" />
               <h4 className="heading">Hamid Aurangzaib</h4>
@@ -119,7 +119,7 @@ const AdminSidebar = () => {
 
   const MainContent = () => {
     return (
-      <div className="col-md-12 col-lg-9">
+      <div className="col-md-12 col-sm-6 col-lg-9 main">
         {activeOption === 'dashboard' && <div><TopLayout /><MyCards/><Userslist/></div>}
         {activeOption === 'notifications' && <div><TopLayout/><Adduser/></div>}
         {activeOption === 'profile' && <div><TopLayout/><Userslist/></div>}

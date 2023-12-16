@@ -29,9 +29,7 @@ function Home() {
        <div className="container">
        <Section/>
       </div>
-      <div className="container">
-       <Cards/>
-       </div>
+      
         </div> 
         <div className="container">
         <Section3/>

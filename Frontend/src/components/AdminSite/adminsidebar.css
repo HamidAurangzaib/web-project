@@ -26,6 +26,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 }
 
 .sidebar-menu li {
@@ -48,6 +49,7 @@ body{
   color: #000;
   padding: 10px 15px;
   border-radius: 4px;
+  
 
 }
 
@@ -55,6 +57,7 @@ body{
   background-color: #4a3637;
   color: #fff;
   background-size: 50px 50px;
+  
 
 
 }
@@ -62,8 +65,13 @@ body{
 .sidebar-menu li.active a {
   background-color: #4a3637;
   color: #fff;
+  
 }
 
 .sidebar-menu li.active a:hover {
   background-color: #4a3637;
+  
+}
+.sidebar:hover {
+  width: 300px; /* Set the maximum width needed for hover effect */
 }
