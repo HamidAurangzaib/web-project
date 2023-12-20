@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url= "https://decasehub.pk/";
+const url= "https://shadiwebsite.vercel.app/";
 
 export const addUsers = async (addusers) =>{
    console.log("post api reached at frontend");
