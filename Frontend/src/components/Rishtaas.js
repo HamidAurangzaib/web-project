@@ -74,7 +74,7 @@ const Rishtaas = ({ user }) => {
   const handleDelete = async (id) => {
     try {
       const deletedData = await axios.delete(
-        `http://localhost:5000/admin/${id}`
+        `https://shadiwebsite.vercel.app/admin/${id}`
       );
       setUsersData((prevUsers) => prevUsers.filter((user) => user._id !== id));
       console.log("User deleted:", deletedData.data);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getUsers } from "../../Service/api";
 import axios from "axios";
 
-const url = "http://localhost:5000";
+const url = "https://shadiwebsite.vercel.app/";
 
 const Deleteuser = ({ users }) => {
   const tableStyle = {
