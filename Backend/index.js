@@ -13,7 +13,11 @@ const url="mongodb+srv://hamid:hamid123@cluster0.jdresm3.mongodb.net/?retryWrite
 mongoose.connect(url).then(()=>console.log("connected to db.."));
 app.listen(5000);
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://decasehub.pk/"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use("/signup",Registeredusers);

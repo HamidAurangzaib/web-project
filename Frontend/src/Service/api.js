@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url= "http://localhost:5000";
+const url= "https://decasehub.pk/";
 
 export const addUsers = async (addusers) =>{
    console.log("post api reached at frontend");
