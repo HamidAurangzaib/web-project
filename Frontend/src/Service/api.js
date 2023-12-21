@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = "http://localhost:5000";
+const url = "https://web-project-backend-kappa.vercel.app/";
 
 export const addUsers = async (addusers) => {
   console.log("post api reached at frontend");
