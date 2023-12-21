@@ -1,10 +1,10 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const Registeredusersstruc= mongoose.Schema({
     
     fname : String,
     lname : String,
-    email: {type: String, unique: true},
+    email: String,
     password: String,
     age: Number,
     gender:  String,

@@ -71,19 +71,19 @@ const Rishtaas = ({ user }) => {
     fetchData();
   }, []);
 
-  const handleDelete = async (id) => {
-    try {
-      const deletedData = await axios.delete(
-        `https://shadiwebsite.vercel.app/admin/${id}`
-      );
-      setUsersData((prevUsers) => prevUsers.filter((user) => user._id !== id));
-      console.log("User deleted:", deletedData.data);
-      // Close the expanded view after deletion
-      setExpandedUser(null);
-    } catch (error) {
-      console.error("Error deleting user:", error);
-    }
-  };
+  // const handleDelete = async (id) => {
+  //   try {
+  //     const deletedData = await axios.delete(
+  //       `http://localhost:5000/${id}`
+  //     );
+  //     setUsersData((prevUsers) => prevUsers.filter((user) => user._id !== id));
+  //     console.log("User deleted:", deletedData.data);
+  //     // Close the expanded view after deletion
+  //     setExpandedUser(null);
+  //   } catch (error) {
+  //     console.error("Error deleting user:", error);
+  //   }
+  // };
 
   const handleViewData = (user) => {
     // Set the expanded user to the selected user
@@ -142,12 +142,7 @@ const Rishtaas = ({ user }) => {
                 </div>
                 {/* Add other fields as needed */}
                 <div style={buttonContainerStyle}>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(item._id)}
-                  >
-                    Delete
-                  </button>
+                 
                   <button
                     className="btn btn-secondary"
                     onClick={handleCloseData}

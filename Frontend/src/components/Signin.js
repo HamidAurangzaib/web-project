@@ -19,6 +19,7 @@ function Signin() {
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
+ 
 
   return (
     <div>
@@ -49,7 +50,7 @@ function Signin() {
               <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
               <a href="!#">Forgot password?</a>
             </div>
-            <MDBBtn className="mb-4 w-100" size="lg" onClick={handleSignIn}>
+            <MDBBtn className="mb-4 w-100" size="lg">
               Sign in
             </MDBBtn>
             <div className="divider d-flex align-items-center my-4">

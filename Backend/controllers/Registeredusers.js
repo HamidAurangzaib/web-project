@@ -1,5 +1,5 @@
 import { Registeredusersmodel } from "../models/Registeredusers.js";
-import bcrypt from "bcrypt";
+
 export const getUsers= async(req,res)=>{
 
     try{
@@ -11,58 +11,59 @@ export const getUsers= async(req,res)=>{
     }
 }
 
-export const addUsers= async(req,res)=>{
-    console.log("post api reached");
-    const fname= req.body.fname;
-    const fnameins= fname.toString();
-    const lname= req.body.lname;
-    const lnameins= lname.toString();
-    const email= req.body.email;
-    const emailins= email.toString();
-    const password= req.body.password;
-    const passwordins= password.toString();
-    const age= req.body.age;
-    const ageins= age.toString();
-    const gender= req.body.gender;
-    const genderins= gender.toString();
-    const religion = req.body.religion; // No need to convert it explicitly
-    const religionins= religion.toString();
-    const cast = req.body.cast; // No need to convert it explicitly
-    const castins= cast.toString();
-    const phone = req.body.phone; // No need to convert it explicitly
-    const phoneins= phone.toString();
-    const city = req.body.city; // No need to convert it explicitly
-    const cityins= city.toString();
-    const country = req.body.country; // No need to convert it explicitly
-    const countryins= country.toString();
-    const image = req.body.image;
-    const imageins= image.toString();
-    const newregistereduser= new Registeredusersmodel({
-        fname: fnameins,
-        lname: lnameins,
-        email: emailins,
-        password: passwordins,
-        age: ageins,
-        gender: genderins,
-        religion: religionins,
-        cast: castins,
-        phone:phoneins,
-        country:countryins,
-        city:cityins,
-        image:imageins
-      
+export const addUsers = async (req, res) => {
+  console.log("post api reached");
+  const fname = req.body.fname;
+  const fnameins = fname.toString();
+  const lname = req.body.lname;
+  const lnameins = lname.toString();
+  const email = req.body.email;
+  const emailins = email.toString();
+  const password = req.body.password;
+  const passwordins = password.toString();
+  const age = req.body.age;
+  const ageins = age.toString();
+  const gender = req.body.gender;
+  const genderins = gender.toString();
+  const religion = req.body.religion;
+  const religionins = religion.toString();
+  const cast = req.body.cast;
+  const castins = cast.toString();
+  const phone = req.body.phone;
+  const phoneins = phone.toString();
+  const city = req.body.city;
+  const cityins = city.toString();
+  const country = req.body.country;
+  const countryins = country.toString();
+  const image = req.body.image;
+  
+  // Check if image is defined before calling toString
+  const imageins = image ? image.toString() : null;
 
+  const newregistereduser = new Registeredusersmodel({
+      fname: fnameins,
+      lname: lnameins,
+      email: emailins,
+      password: passwordins,
+      age: ageins,
+      gender: genderins,
+      religion: religionins,
+      cast: castins,
+      phone: phoneins,
+      country: countryins,
+      city: cityins,
+      image: imageins
+  });
 
-    });
-    try{
-        await newregistereduser.save();
-        res.json(newregistereduser);
-    } catch(error){
-        console.log("not saved");
-    }
-}
-
-
+  try {
+      await newregistereduser.save();
+      res.json(newregistereduser);
+  } catch (error) {
+      console.log("not saved");
+      // Handle the error, send an appropriate response, or log additional details
+      res.status(500).json({ error: "Internal server error" });
+  }
+};
 
 export const updateUser = async (req, res) => {
     const { id } = req.params;

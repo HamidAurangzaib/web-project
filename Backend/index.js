@@ -13,14 +13,9 @@ const url="mongodb+srv://hamid:hamid123@cluster0.jdresm3.mongodb.net/?retryWrite
 mongoose.connect(url).then(()=>console.log("connected to db.."));
 app.listen(5000);
 
-app.use(cors({
-    origin: ["https://shadiwebsite-frontend.vercel.app"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    
-}));
+app.use(cors());
 app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use("/signup",Registeredusers);
 app.use("/admin",Registeredusers);
 app.use("/rishtaas",Registeredusers);
-

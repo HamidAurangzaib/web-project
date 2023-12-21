@@ -17,7 +17,7 @@ import Disclaimer from "./components/Disclaimer";
 import AdminSidebar from "./components/AdminSite/AdminSidebar";
 
  function App() {
-  axios.post("https://web-project-prul.vercel.app")
+  // axios.post("https://web-project-prul.vercel.app")
 
    return (
     
