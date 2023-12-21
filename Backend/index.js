@@ -14,7 +14,7 @@ mongoose.connect(url).then(()=>console.log("connected to db.."));
 app.listen(5000);
 
 app.use(cors({
-    origin: ["https://shadiwebsite.vercel.app/"],
+    origin: ["https://shadiwebsite-frontend.vercel.app/"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }));
