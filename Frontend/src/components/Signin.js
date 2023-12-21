@@ -11,7 +11,6 @@ import {
 import './signin.css';
 import Footer from './Footer';
 import Navbar from './Navbar';
-import { authenticateUser } from '../Service/api'; // Import the authentication function
 
 function Signin() {
   const [email, setEmail] = useState('');
@@ -20,24 +19,6 @@ function Signin() {
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
-  const handleSignIn = async () => {
-    try {
-      // Call the authentication function with entered email and password
-      const response = await authenticateUser({ email, password });
-
-      // Check if authentication is successful based on the response from the server
-      if (response.success) {
-        // Redirect to the home page or any other authorized page
-        // You can use react-router-dom for this purpose
-        console.log('Authentication successful!');
-      } else {
-        // Display an error message to the user
-        console.error('Authentication failed. Invalid email or password.');
-      }
-    } catch (error) {
-      console.error('Error during authentication:', error.message);
-    }
-  };
 
   return (
     <div>
