@@ -14,7 +14,7 @@ mongoose.connect(url).then(()=>console.log("connected to db.."));
 app.listen(5000);
 
 app.use(cors({
-    origin: ["https://web-project-frontend-git-master-hamidaurangzaibs-projects.vercel.app/"],
+    origin: ["https://web-project-frontend-new.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     
 }));
