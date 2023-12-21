@@ -15,7 +15,7 @@ import Disclaimer from "./components/Disclaimer";
  import Tos from "./components/Tos";
  import Rishtaas from "./components/Rishtaas";
 import AdminSidebar from "./components/AdminSite/AdminSidebar";
-
+import axios from 'axios';
  function App() {
   axios.post("https://web-project-prul.vercel.app")
 
