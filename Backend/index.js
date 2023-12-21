@@ -15,7 +15,7 @@ app.listen(5000);
 
 app.use(cors({
     origin: ["https://shadiwebsite-frontend.vercel.app"],
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
     
 }));
 app.use(bodyParser.json({extended:true}));
