@@ -17,7 +17,7 @@ import Disclaimer from "./components/Disclaimer";
 import AdminSidebar from "./components/AdminSite/AdminSidebar";
 import axios from 'axios';
  function App() {
-  axios.post("https://web-project-prul.vercel.app")
+  axios.post("https://web-project-frontend-git-master-hamidaurangzaibs-projects.vercel.app/")
 
    return (
     
