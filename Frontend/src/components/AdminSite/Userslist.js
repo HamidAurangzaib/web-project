@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getUsers } from "../../Service/api";
 import axios from "axios";
 
-const url = "web-project-prul.vercel.app";
+const url = "https://web-project-prul.vercel.app/";
 
 const Userslist = ({ users }) => {
   const tableStyle = {
