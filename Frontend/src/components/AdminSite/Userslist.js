@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getUsers } from "../../Service/api";
-import axios from "axios";
 
-const url = "https://web-project-backend-kappa.vercel.app/";
 
 const Userslist = ({ users }) => {
   const tableStyle = {

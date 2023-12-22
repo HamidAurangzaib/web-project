@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+
+
 import {
   MDBContainer,
   MDBCol,
@@ -6,48 +8,57 @@ import {
   MDBBtn,
   MDBIcon,
   MDBInput,
-  MDBCheckbox
-} from 'mdb-react-ui-kit';
-import './signin.css';
-import Footer from './Footer';
-import Navbar from './Navbar';
+  MDBCheckbox,
+} from "mdb-react-ui-kit";
+import "./signin.css";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 function Signin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-
- 
+  
 
   return (
     <div>
       <Navbar />
       <MDBContainer fluid className="container-fluid p-3 my-5">
         <MDBRow className="container-fluid mainrow mb-3">
-          <MDBCol col='10' md='6'>
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image" />
+          <MDBCol col="10" md="6">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+              class="img-fluid"
+              alt="Phone image"
+            />
           </MDBCol>
-          <MDBCol col='4' md='6'>
+          <MDBCol col="4" md="6">
             <MDBInput
-              wrapperClass='mb-4'
-              label='Email address'
-              id='formControlLg'
-              type='email'
+              wrapperClass="mb-4"
+              label="Email address"
+              id="formControlLg"
+              type="email"
               size="lg"
               onChange={handleEmailChange}
             />
             <MDBInput
-              wrapperClass='mb-4'
-              label='Password'
-              id='formControlLg'
-              type='password'
+              wrapperClass="mb-4"
+              label="Password"
+              id="formControlLg"
+              type="password"
               size="lg"
               onChange={handlePasswordChange}
             />
             <div className="d-flex justify-content-between mx-4 mb-4">
-              <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
+              <MDBCheckbox
+                name="flexCheck"
+                value=""
+                id="flexCheckDefault"
+                label="Remember me"
+              />
               <a href="!#">Forgot password?</a>
             </div>
             <MDBBtn className="mb-4 w-100" size="lg">
@@ -56,17 +67,29 @@ function Signin() {
             <div className="divider d-flex align-items-center my-4">
               <p className="text-center fw-bold mx-3 mb-0">OR</p>
             </div>
-            <MDBBtn className="mb-4 w-100" size="lg" style={{backgroundColor: '#3b5998'}}>
-              <MDBIcon fab icon="facebook-f" className="mx-2"/>
+            <MDBBtn
+              className="mb-4 w-100"
+              size="lg"
+              style={{ backgroundColor: "#3b5998" }}
+            >
+              <MDBIcon fab icon="facebook-f" className="mx-2" />
               Continue with facebook
             </MDBBtn>
-            <MDBBtn className="mb-4 w-100" size="lg" style={{backgroundColor: '#55acee'}}>
-              <MDBIcon fab icon="twitter" className="mx-2"/>
+            <MDBBtn
+              className="mb-4 w-100"
+              size="lg"
+              style={{ backgroundColor: "#55acee" }}
+            >
+              <MDBIcon fab icon="twitter" className="mx-2" />
               Continue with twitter
             </MDBBtn>
+            
           </MDBCol>
+          
+          
         </MDBRow>
-        <div className='container-fluid'>
+
+        <div className="container-fluid">
           <Footer />
         </div>
       </MDBContainer>

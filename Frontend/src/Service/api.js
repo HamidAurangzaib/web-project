@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const url = "https://web-project-backend-kappa.vercel.app/";
+const url = "http://localhost:5000";
 
 export const addUsers = async (addusers) => {
   console.log("post api reached at frontend");
@@ -25,13 +25,16 @@ export const updateUser = async (userId, updatedUserData) => {
     throw error;
   }
 };
-
-// Authentication function
 export const authenticateUser = async (credentials) => {
   try {
-    const response = await axios.post(`${url}/authenticate`, credentials);
+    const response = await axios.post(`${url}/signin`, credentials);
     return response.data;
   } catch (error) {
     throw error;
   }
+};
+
+export const addGoogleUser = async (googleObj) => {
+  console.log("Add google user : ", googleObj);
+  axios.post(`${url}/google/Signup`, googleObj);
 };

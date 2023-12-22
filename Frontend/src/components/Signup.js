@@ -1,5 +1,7 @@
-
+import {GoogleLogin} from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
 import React, { useState } from 'react';
+import {addGoogleUser} from "../Service/api"
 import {
   MDBBtn,
   MDBContainer,
@@ -16,6 +18,23 @@ import Footer from './Footer';
 import { addUsers } from '../Service/api';
 
 function Signup() {
+
+  const handleGoogleSignup = async (credentialResponse) => {
+    const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
+    const email = credentialResponseDecoded.email;
+    const name = credentialResponseDecoded.name;
+    const googleObj ={
+      name : name,
+      email : email
+    }
+
+    console.log("Google Object:", googleObj);
+
+    // await addGoogleUser(googleEmail, googlePicture, isGoogleAccount);
+    console.log(name,email);
+    const response = await addGoogleUser(googleObj);
+  };
+
   const [addusers, setAddusers] = useState({
     fname: "",
     lname: "",
@@ -131,7 +150,13 @@ function Signup() {
             </div>
             <MDBBtn className='w-100 mb-4' size='md' onClick={(e) => adddetails(e)}>sign up</MDBBtn>
             <div className="text-center">
-              <p>or sign up with:</p>
+            <GoogleLogin 
+            onSuccess={handleGoogleSignup}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          />
+          
               <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
                 <MDBIcon fab icon='facebook-f' size="sm" />
               </MDBBtn>

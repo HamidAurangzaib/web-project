@@ -2,6 +2,7 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
+import { addGoogleUserInDb } from './controllers/addGoogleUser.js';
 import Registeredusers from './routes/Registeredusers.js'
 
 import { Registeredusersmodel } from './models/Registeredusers.js';
@@ -13,13 +14,11 @@ const url="mongodb+srv://hamid:hamid123@cluster0.jdresm3.mongodb.net/?retryWrite
 mongoose.connect(url).then(()=>console.log("connected to db.."));
 app.listen(5000);
 
-app.use(cors({
-    origin:["https://web-project-frontend-git-master-hamidaurangzaibs-projects.vercel.app"],
-    methods:["POST","GET","PUT","DELETE"],
-    credentials:true
-}));
+app.use(cors());
+
 app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use("/signup",Registeredusers);
 app.use("/admin",Registeredusers);
 app.use("/rishtaas",Registeredusers);
+app.post("/google/Signup" , addGoogleUserInDb);

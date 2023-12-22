@@ -11,8 +11,7 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 
-import { addUsers } from "../../Service/api";
-
+import {addUsers} from "../../Service/api";
 function Adduser() {
   const [addusers, setAddusers] = useState({
     fname: "",
